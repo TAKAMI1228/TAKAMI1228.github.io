@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+h2 {
+  font-family: 'Sacramento', cursive;
+}
+
 
 .header {
   position: fixed;
@@ -12,5 +18,3 @@
   overflow: auto;
   background-color: aqua;
 }
-
- 
