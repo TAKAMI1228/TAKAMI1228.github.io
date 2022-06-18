@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>計算便利ツール</title>
 </head>
 
 <body>
@@ -15,9 +15,19 @@
         ここで計算していけばいいよ。（うちに20cmの丸型があって、それでよくケーキを焼いていたけど、20cm用のレシピが少ない・・・。だからこの計算便利かなって）</p>
 
     <form class="zairyo">
+        <div>型の形状<br></div>
+        <input type="radio" name="kata" id="maru_maru"><label>丸型→丸型</label>
+        <input type="radio" name="kata" id="shikaku_shikaku"><label>四角型→四角型</label>
+        <input type="radio" name="kata" id="maru_shikaku"><label>丸型→四角型</label>
+        <input type="radio" name="kata" id="shikaku_maru"><label>四角型→丸型</label>
+
         <div class="kata_mozi">型のサイズ<br></div>
         <label>レシピのサイズ(cm)<input type="number" id="res_size"></label>
         <label>使いたい型のサイズ(cm)<input type="number" id="my_size"></label>
+
+        <div>材料<br></div>
+
+
         <button type="button" onclick="cal_Button()">計算</button>
         <p id="result">結果表示</p>
         <script type="text/javascript" src="keisan.js"></script>
