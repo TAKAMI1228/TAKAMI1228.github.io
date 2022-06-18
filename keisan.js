@@ -8,7 +8,11 @@
 function cal_Button() {
     var res_kata = document.getElementById("res_size");
     var my_kata = document.getElementById("my_size");
+    //console.log(res_kata.value);
+    //console.log(my_kata.value);
     //丸型
-    var maru = res_kata ^ 2 / (my_kata ^ 2);
-    document.getElementById("result").innerHTML = maru.value;
+    var maru = (Math.pow(my_kata.value, 2) / Math.pow(res_kata.value, 2)).toFixed(1);
+    document.getElementById("result").textContent = maru;
+
+    //四角型
 }
