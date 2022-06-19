@@ -15,7 +15,7 @@
         ここで計算していけばいいよ。（うちに20cmの丸型があって、それでよくケーキを焼いていたけど、20cm用のレシピが少ない・・・。だからこの計算便利かなって）</p>
 
     <form class="zairyo">
-        <div>型の形状<br></div>
+        <div>型の形状(レシピの型の形状→使いたい型の形状)<br></div>
         <label><input type="radio" name="kata" id="maru_maru">丸型→丸型</label>
         <label><input type="radio" name="kata" id="shikaku_shikaku">四角型→四角型</label>
         <label><input type="radio" name="kata" id="maru_shikaku">丸型→四角型</label>
@@ -25,23 +25,51 @@
         <label>レシピのサイズ(cm)<input type="number" id="res_size"></label>
         <label>使いたい型のサイズ(cm)<input type="number" id="my_size"></label>
 
-        <div><br>材料<br>　材料名　　　　　　　　分量</div>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-        <label><input type="text" name="mate_n">:<input type="number" name="mate"><br></label>
-
+        <div><br>材料<br>※牛乳、生クリーム等のml表記のものに関しましても、1ml=約1gと記載されているサイトが多くあるため、
+            グラム表記のものと同じ割合で計算してあります。<br>
+            　あくまでも参考としての計算ツールですので、ご了承ください。<br>　材料名　　　　　　　　分量　　　　　　　　　　　　　使いたい型で使用する分量(目安)</div>
+        <div id="mate1">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g1">g(ml)　→　</label>
+            <span id="result1"></span>
+        </div>
+        <div id="mate2">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g2">g(ml)　→　</label>
+        </div>
+        <div id="mate3">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g3">g(ml)　→　</label>
+        </div>
+        <div id="mate4">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g4">g(ml)　→　</label>
+        </div>
+        <div id="mate5">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g5">g(ml)　→　</label>
+        </div>
+        <div id="mate6">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g6">g(ml)　→　</label>
+        </div>
+        <div id="mate7">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g7">g(ml)　→　</label>
+        </div>
+        <div id="mate8">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g8">g(ml)　→　</label>
+        </div>
+        <div id="mate9">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g9">g(ml)　→　</label>
+        </div>
+        <div id="mate10">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g10">g(ml)　→　</label>
+        </div>
+        <div id="mate11">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g11">g(ml)　→　</label>
+        </div>
+        <div id="mate12">
+            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g12">g(ml)　→　</label>
+        </div>
+        <div id="mate_egg">
+            <label>全卵:<input type="number" name="mate" id="zai_egg">個　→　</label>
+        </div>
 
         <button type="button" onclick="cal_Button()">計算</button>
-        <p id="result">結果表示</p>
         <script type="text/javascript" src="keisan.js"></script>
     </form>
 </body>
