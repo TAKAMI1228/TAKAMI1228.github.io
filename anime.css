@@ -1,0 +1,21 @@
+square {
+    height: 200px;
+    width: 200px;
+    background: #0bd;
+}
+
+/* General Styling */
+body {
+    padding: 2rem;
+}
+
+.test {
+    font-size: 20;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.mozi {
+    font-size: 0px;
+}
