@@ -1,7 +1,7 @@
 const re_button=document.getElementById('remove');
 var checks = document.getElementsByClassName('checks');
 
-//支出額の項目のコピーを追加。
+//支出額の項目のコピーを追加
 function addFunc(){
     re_button.disabled=false;
     let spe=document.getElementById("data2");
