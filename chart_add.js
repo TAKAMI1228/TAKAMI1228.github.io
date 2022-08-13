@@ -1,3 +1,5 @@
+//項目の追加、削除ボタン処理用プログラム
+
 const re_button=document.getElementById('remove');
 var checks = document.getElementsByClassName('checks');
 
@@ -21,14 +23,21 @@ function removeFunc() {
     console.log(checks.length);
 
     //前から回すと配列の要素数が変わってしまってうまく回らないため後ろから回す。
-    for(var i=checks.length-1;i>0;i--){
+    for(var i=checks.length-1;i>=0;i--){
+
+        if(checks.length==1){
+            alert("最低でも項目が一つ必要です。");
+            re_button.disabled=true;
+            continue;
+        }
+
         if(checks[i].checked==true){
             flag=true;
             re.removeChild(child[i]);
         }
     }
     if(!flag){
-        alert("最低でも項目が一つ必要です。もしくは、項目が選択されていません。");
+        alert("項目が選択されていません。");
     }
 }
 
