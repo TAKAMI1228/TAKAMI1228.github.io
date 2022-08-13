@@ -7,21 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>簡単家計簿</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <link rel="chart" href="chart.css">
 </head>
 
 <body>
-    <div style="position:relative;width:600px;height:600px;"><canvas id="stage"></canvas></div>
+    <div style="position:relative;width:900px;height:500px;"><canvas id="stage"></canvas></div>
     <script type="text/javascript" src="chart_test.js"></script>
+    <div>
+        <span id="result"></span>
+    </div>
     <div id="data1">
-        <label>全額（貯金額や今月の給料などを設定）:<input type="number" name="data_time" id="full_amount">円</label>
-        <span id="result1"></span>
+        <label>全額（貯金額や今月の給料などを設定）:<input type="number" name="data_time" id="full_amount" value="10000">円</label>
     </div>
     <p>支出</p>
     <button type="button" id="add">項目の追加</button>
     <button type="button" id="remove" onclick="removeFunc()">項目の削除</button>
     <div id="data2">
         <div id="data2_c">
-            <label>内容:<input type="text" class="nai" name="data_name" id="naiyou" value="交際費">支出金額:<input type="number" class="spend" name="data_time" id="spending" value="0"></label>
+            <label>内容:<input type="text" class="nai" name="data_name" id="naiyou" value="交際費">支出金額:<input type="number" class="spend" name="data_time" id="spending" value="0">円</label>
             <input type="checkbox" class="checks" name="ckb" id="check"></div>
         </div>
     </div>
