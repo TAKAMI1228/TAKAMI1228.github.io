@@ -12,8 +12,8 @@ function box_data() {
     var bgdata=[];
 
 
-    var naiyou=document.getElementsByClassName("nai");
-    var shishu=document.getElementsByClassName("spend");
+    var naiyou=document.getElementsByClassName("py-2 border-b focus:outline-none focus:border-b-2 focus:border-green-500 placeholder-gray-500 placeholder-opacity-50");
+    var shishu=document.getElementsByClassName("py-2 border-b focus:outline-none focus:border-b-2 focus:border-red-500 placeholder-gray-500 placeholder-opacity-50");
         for (var i=0; i<naiyou.length; i++){
             Label2.push(naiyou[i].value);
             Array2.push(shishu[i].value);
