@@ -26,8 +26,9 @@ function removeFunc() {
     for(var i=checks.length-1;i>=0;i--){
 
         if(checks.length==1){
+
             alert("最低でも項目が一つ必要です。");
-            re_button.disabled=true;
+            //re_button.disabled=true;
             continue;
         }
 
@@ -44,5 +45,5 @@ function removeFunc() {
 
 //要素が一つの時はボタンを無効化（間違えて消したら追加ができなくなってしまうため最低一つは残す。）
 if(checks.length==1){
-    re_button.disabled=true;
+    //re_button.disabled=true;
 }
