@@ -6,17 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>計算便利ツール</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="kei_style.css">
 </head>
-
+<header>
+    <h1 class="flex justify-center text-center font-black text-5xl">お菓子作りのための便利計算</h1>
+</header>
 <body>
-    <h1>便利（？）な計算コーナー</h1>
-    <h2>材料の計算（テスト段階のためまだ未実装）</h2>
-    <p>よく、「レシピの半分の量で作りたい。」「15cmの型のレシピだけど、18cmの型で作りたい。」って思うときって・・・あるよね？<br>
+    <h2 class="flex justify-center font-black">材料の計算</h2>
+    <div class="flex justify-center border-dotted border-4 border-red-600">
+        <p>よく、「レシピの半分の量で作りたい。」「15cmの型のレシピだけど、18cmの型で作りたい。」って思うときって・・・あるよね？<br>
         ここで計算していけばいいよ。（うちに20cmの丸型があって、それでよくケーキを焼いていたけど、20cm用のレシピが少ない・・・。だからこの計算便利かなって）</p>
-
-    <form class="zairyo">
-        <div>型の形状(レシピの型の形状→使いたい型の形状)<br>※丸の場合は直径、四角の場合は底面の一辺の長さ</div>
+    </div>
+    <form>
+        <div class="w-full lg:w-1/2">
+        <h2 class="font-black">型の形状(レシピの型の形状→使いたい型の形状)<br>※丸の場合は直径、四角の場合は底面の一辺の長さ</h2>
         <div>
             <label><input type="radio" name="kata" id="maru_maru" checked="checked">丸型→丸型 or
                 四角型→四角型</label>
@@ -32,63 +36,160 @@
         <label>レシピのサイズ(cm)<input type="number" id="res_size"></label>
         <label>使いたい型のサイズ(cm)<input type="number" id="my_size"></label>
 
-        <div><br>材料<br>※牛乳、生クリーム等のml表記のものに関しましても、1ml=約1gと記載されているサイトが多くあるため、
-            グラム表記のものと同じ割合で計算してあります。<br>
-            　あくまでも参考としての計算ツールですので、ご了承ください。<br>　材料名　　　　　　　　分量　　　　　　　　　　　　　使いたい型で使用する分量(目安)</div>
-        <div id="mate1">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g1">g(ml)　→　</label>
-            <span id="result1"></span>
+        <p class="font-black">材料</p>
+        <p>※牛乳、生クリーム等のml表記のものに関しましても、1ml=約1gと記載されているサイトが多くあるため、
+        グラム表記のものと同じ割合で計算してあります。<br>
+        あくまでも参考としての計算ツールですので、ご了承ください。
+        </p>
+        <div class="h-screen w-screen flex justify-center">
+        <table id="table">
+            <thead>
+            <tr>
+                <th class="border px-4 py-2">材料名</th>
+                <th class="border px-4 py-2">分量(g,ml,大さじ,小さじなど...)</th>
+                <th class="border px-4 py-2">使いたい型で使用する分量</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input class="hover:border-double border-4 border-green-400" type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g1">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result1"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g2">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result2"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g3">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result3"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g4">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result4"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g5">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result5"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g6">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result6"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g7">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result7"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g8">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result8"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g9">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result9"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g10">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result10"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g11">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result11"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">
+                    <input type="text" name="mate_n">
+                </td>
+                <td class="border px-4 py-2">
+                    <input type="number" name="mate" id="zai_g12">
+                </td>
+                <td class="border px-4 py-2">
+                    <span id="result12"></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
         </div>
-        <div id="mate2">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g2">g(ml)　→　</label>
-            <span id="result2"></span>
+        <div class="flex justify-end">
+            <button type="button" class="shadow-lg px-2 py-1  bg-yellow-400 text-lg text-white font-semibold rounded  hover:bg-yellow-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="cal_Button()">計算</button>
         </div>
-        <div id="mate3">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g3">g(ml)　→　</label>
-            <span id="result3"></span>
         </div>
-        <div id="mate4">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g4">g(ml)　→　</label>
-            <span id="result4"></span>
-        </div>
-        <div id="mate5">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g5">g(ml)　→　</label>
-            <span id="result5"></span>
-        </div>
-        <div id="mate6">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g6">g(ml)　→　</label>
-            <span id="result6"></span>
-        </div>
-        <div id="mate7">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g7">g(ml)　→　</label>
-            <span id="result7"></span>
-        </div>
-        <div id="mate8">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g8">g(ml)　→　</label>
-            <span id="result8"></span>
-        </div>
-        <div id="mate9">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g9">g(ml)　→　</label>
-            <span id="result9"></span>
-        </div>
-        <div id="mate10">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g10">g(ml)　→　</label>
-            <span id="result10"></span>
-        </div>
-        <div id="mate11">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g11">g(ml)　→　</label>
-            <span id="result11"></span>
-        </div>
-        <div id="mate12">
-            <label><input type="text" name="mate_n">:<input type="number" name="mate" id="zai_g12">g(ml)　→　</label>
-            <span id="result12"></span>
-        </div>
-        <div id="mate_egg">
-            <label>全卵（未実装）:<input type="number" name="mate" id="zai_egg">個　→　</label>
-        </div>
-
-        <button type="button" class="keisan_button" onclick="cal_Button()">計算</button>
-
         <script type="text/javascript" src="keisan.js"></script>
     </form>
 </body>

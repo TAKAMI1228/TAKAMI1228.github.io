@@ -1,12 +1,15 @@
-button {
-    color: #000;
-    background-color: #fff100;
-    border-bottom: 5px solid #ccc100;
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500&display=swap');
+
+header {
+	background: url(sweets.jpg) center / cover;
+    position: relative;
+	height: 20vh;
 }
 
-button :hover {
-    margin-top: 3px;
-    color: #000;
-    background: #fff20a;
-    border-bottom: 2px solid #ccc100;
+h1{
+    font-family: 'Kaisei Decol', serif;
+}
+
+h2{
+    font-family: 'Kaisei Decol', serif;
 }
