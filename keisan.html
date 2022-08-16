@@ -8,55 +8,66 @@
     <title>計算便利ツール</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="kei_style.css">
+    <link rel="icon" href="favicon2.ico">
 </head>
-<header>
-    <h1 class="flex justify-center text-center font-black text-5xl">お菓子作りのための便利計算</h1>
-</header>
+
 <body>
-    <h2 class="flex justify-center font-black">材料の計算</h2>
-    <div class="flex justify-center border-dotted border-4 border-red-600">
-        <p>よく、「レシピの半分の量で作りたい。」「15cmの型のレシピだけど、18cmの型で作りたい。」って思うときって・・・あるよね？<br>
-        ここで計算していけばいいよ。（うちに20cmの丸型があって、それでよくケーキを焼いていたけど、20cm用のレシピが少ない・・・。だからこの計算便利かなって）</p>
-    </div>
-    <form>
-        <div class="w-full lg:w-1/2">
-        <h2 class="font-black">型の形状(レシピの型の形状→使いたい型の形状)<br>※丸の場合は直径、四角の場合は底面の一辺の長さ</h2>
-        <div>
-            <label><input type="radio" name="kata" id="maru_maru" checked="checked">丸型→丸型 or
+    <header>
+        <h1><br><br></h1>
+        <h1 class="flex justify-center text-center font-black text-5xl leading-10 bg-white bg-opacity-50">お菓子作りのための便利計算</h1>
+    </header>
+    <main class="bg-white bg-opacity-50">
+    <form class="flex justify-center bg-white bg-opacity-70">
+        <div class="w-full lg:w-3/5">
+            <br>
+            <div class="border-dotted border-4 border-pink-500 bg-pink-100">
+                <p class="text-center"><strong class="underline text-2xl text-purple-500">「レシピの半分の量で作りたい。」「15cmの型のレシピだけど、18cmの型で作りたい。」</strong><br>お菓子作りをしていると、このような問題に直面することがあります。<br>
+                そこで開発したのがこの計算アプリです。レシピに記載されているサイズの分量から、手持ちの型の分量に変換できます。<br><strong class="text-red-500">※あくまでも目安です</strong></p>
+            </div>
+            <br>
+        <h2 class="font-black">型の形状(レシピの型の形状→使いたい型の形状)<br></h2>
+        <p>※丸の場合は<strong class="bg-pink-200">直径</strong>、四角の場合は<strong class="bg-pink-200">底面の一辺の長さ</strong></p>
+        <ul class="border-dotted border-2 border-x-2 border-pink-500 w-64 bg-pink-100">
+            <li>
+                <label><input type="radio" name="kata" id="maru_maru" checked="checked">丸型→丸型 or
                 四角型→四角型</label>
-        </div>
-        <div>
+            </li>
+            <li>
             <label><input type="radio" name="kata" id="maru_shikaku">丸型→四角型</label>
-        </div>
-        <div>
+            </li>
+            <li>
             <label><input type="radio" name="kata" id="shikaku_maru">四角型→丸型</label>
+            </li>
+        </ul>
+
+        <h2 class="font-black"><br>型のサイズ<br></h2>
+        <div class="border-dotted border-2 border-x-2 border-pink-500 w-64 bg-pink-100">
+            <label>レシピのサイズ(cm)<input class="focus:bg-blue-200 focus:outline-none hover:bg-blue-100" type="number" id="res_size"><br></label>
+            <label>使いたい型のサイズ(cm)<input class="focus:bg-blue-200 focus:outline-none hover:bg-blue-100" type="number" id="my_size"></label>
         </div>
-
-        <div class="kata_mozi"><br>型のサイズ<br></div>
-        <label>レシピのサイズ(cm)<input type="number" id="res_size"></label>
-        <label>使いたい型のサイズ(cm)<input type="number" id="my_size"></label>
-
-        <p class="font-black">材料</p>
+        <br>
+        <h2 class="font-black">材料</h2>
         <p>※牛乳、生クリーム等のml表記のものに関しましても、1ml=約1gと記載されているサイトが多くあるため、
-        グラム表記のものと同じ割合で計算してあります。<br>
-        あくまでも参考としての計算ツールですので、ご了承ください。
+        グラム表記のものと同じ割合で計算してあります。あくまでも参考としての計算ツールですので、ご了承ください。
         </p>
-        <div class="h-screen w-screen flex justify-center">
-        <table id="table">
+        <div class="">
+            <button type="button" class="shadow-lg px-2 py-1 w-40 bg-red-400 text-lg text-white font-semibold rounded  hover:bg-red-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="cal_Button()">計算</button>
+            <br>
+        <table class="border-separate border-2 border-red-100 bg-white" id="table">
             <thead>
             <tr>
-                <th class="border px-4 py-2">材料名</th>
-                <th class="border px-4 py-2">分量(g,ml,大さじ,小さじなど...)</th>
-                <th class="border px-4 py-2">使いたい型で使用する分量</th>
+                <th class="border px-4 py-2 bg-pink-200">材料名</th>
+                <th class="border px-4 py-2 bg-pink-200">分量(g,ml,大さじ,小さじなど...)</th>
+                <th class="border px-4 py-2 bg-pink-200">使いたい型で使用する分量</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td class="border px-4 py-2">
-                    <input class="hover:border-double border-4 border-green-400" type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g1">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g1">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result1"></span>
@@ -64,10 +75,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g2">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g2">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result2"></span>
@@ -75,10 +86,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g3">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g3">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result3"></span>
@@ -86,10 +97,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g4">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g4">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result4"></span>
@@ -97,10 +108,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g5">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g5">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result5"></span>
@@ -108,10 +119,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g6">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g6">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result6"></span>
@@ -119,10 +130,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g7">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g7">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result7"></span>
@@ -130,10 +141,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g8">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g8">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result8"></span>
@@ -141,10 +152,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g9">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g9">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result9"></span>
@@ -152,10 +163,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g10">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g10">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result10"></span>
@@ -163,10 +174,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g11">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g11">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result11"></span>
@@ -174,10 +185,10 @@
             </tr>
             <tr>
                 <td class="border px-4 py-2">
-                    <input type="text" name="mate_n">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                 </td>
                 <td class="border px-4 py-2">
-                    <input type="number" name="mate" id="zai_g12">
+                    <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g12">
                 </td>
                 <td class="border px-4 py-2">
                     <span id="result12"></span>
@@ -185,13 +196,16 @@
             </tr>
             </tbody>
         </table>
+        <br>
         </div>
         <div class="flex justify-end">
-            <button type="button" class="shadow-lg px-2 py-1  bg-yellow-400 text-lg text-white font-semibold rounded  hover:bg-yellow-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="cal_Button()">計算</button>
         </div>
         </div>
         <script type="text/javascript" src="keisan.js"></script>
     </form>
+    </main>
+    <footer class="bg-pink-100">
+        <p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p> 
+    </footer>
 </body>
-
 </html>
