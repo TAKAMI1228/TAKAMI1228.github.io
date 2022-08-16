@@ -10,6 +10,11 @@
 function cal_Button() {
     var res_kata = document.getElementById("res_size");
     var my_kata = document.getElementById("my_size");
+    console.log(res_kata.value);
+
+    if(res_kata.value=="" || my_kata.value==""){
+        alert("型のサイズが未入力です。");
+    }
 
     for (var i = 1; i < 13; i++) {
         //入力された材料の分量（元レシピの分量）取得
