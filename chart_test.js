@@ -7,10 +7,10 @@ function box_data() {
     var f_amo=document.getElementById("full_amount");
     var f_amonum=f_amo.value;
     var result_m = document.getElementById("result");
+    var ale=document.getElementsByClassName("text-red-600");
     var Label2=[];
     var Array2=[];
     var bgdata=[];
-
 
     var naiyou=document.getElementsByClassName("py-2 border-b focus:outline-none focus:border-b-2 focus:border-green-500 placeholder-gray-500 placeholder-opacity-50");
     var shishu=document.getElementsByClassName("py-2 border-b focus:outline-none focus:border-b-2 focus:border-red-500 placeholder-gray-500 placeholder-opacity-50");
@@ -18,6 +18,11 @@ function box_data() {
             Label2.push(naiyou[i].value);
             Array2.push(shishu[i].value);
             bgdata.push("rgba(255, 0, 111, 0.2)");
+            console.log(shishu[i].value);
+            ale[i].textContent="";
+            if(shishu[i].value==""){
+                ale[i].textContent="数字を入力してください。";
+            }
             f_amonum=f_amonum-shishu[i].value;
     }
 
@@ -50,8 +55,6 @@ function box_data() {
             text: '今月の収入、支出割合'
         }
     };
-
-    console.log(chart);
 
     //前のグラフのデータを破棄。
     if (chart != null) {
