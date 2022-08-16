@@ -6,10 +6,19 @@ header {
 	height: 20vh;
 }
 
+main{
+    background: url(kei_back.jpg) center / cover;
+    position: relative;
+}
+
 h1{
     font-family: 'Kaisei Decol', serif;
 }
 
 h2{
     font-family: 'Kaisei Decol', serif;
+}
+footer {
+    position: relative;
+	height: 5vh;
 }
