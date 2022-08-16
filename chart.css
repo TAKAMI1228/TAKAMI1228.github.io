@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap');
+
+header {
+	background: url(kakei.jpg) center / cover;
+    position: relative;
+	height: 20vh;
+}
+
+h1{
+    font-family: 'Klee One', cursive;
+}
