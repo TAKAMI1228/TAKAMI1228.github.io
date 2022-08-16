@@ -7,6 +7,7 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="icon" href="favicon2.ico">
 </head>
 
 <body>
@@ -16,17 +17,19 @@
 	<header class="container mx-auto flex justify-between bg-blue-300">
 		<nav id="snav">
 			<ul class="flex">
-				<li class="border-b p-4 m-3 hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="#">About</a></li>
-				<li class="border-b p-4 m-3 hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="#">Chicks</a></li>
-				<li class="border-b p-4 m-3 hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="#">ヒヨコ</a></li>
-				<li class="border-b p-4 m-3 hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="#">メニュー4</a></li>
-				<li class="border-b p-4 m-3 hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="#">メニュー5</a></li>
+				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="about.html">このサイトについて</a></li>
+				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="keisan.html">お菓子作り便利計算</a></li>
+				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="chart_test.html">簡単家計簿</a></li>
+				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="#">ひよこ</a></li>
 			</ul>
 		</nav>
 	</header>
+	<main>
+		<div class="bg-green-300">
+			<marquee scrollamount=10><img class="" src="piyoko.gif"><span id="hiyod">毎月14日、15日は「ひよこの日🐥」</span><img class="" src="piyoko.gif"></marquee>
+		</div>
 	<div class="main">
 		<div>
-			<p id="hiyoko_day"></p>
 			<p id="today"></p>
 			<p class="font-black text-red-600" id="todayhiyoko"></p>
 			<p id="hiyoko_next"></p>
@@ -34,12 +37,13 @@
 		</div>
 		<h1>毎日ひよこ</h1>
 		<h2>～Everyday Chick～</h2>
-		<a href="keisan.html">ここで色々な計算ができるよ<br></a>
-		<a href="chart_test.html">グラフテスト</a>
 		<p>ちなみにこの下はかわいい子たち</p>
 		<img src="Piyo.jpg">
 	</div>
 	<script type="text/javascript" src="sample.js"></script>
+	</main>
+	<footer class="bg-pink-100">
+		<p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p> 
+	</footer>
 </body>
-
 </html>
