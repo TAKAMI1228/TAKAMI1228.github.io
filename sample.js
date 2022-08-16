@@ -70,8 +70,6 @@ var count=Math.floor(next_piyo/(1000*60*60*24))+1;
 var next_piyo2=dt_next2.getTime()-dt.getTime();
 var count2=Math.floor(next_piyo2/(1000*60*60*24))+1;
 
-
-hiyoday.textContent="毎月14日、15日は「ひよこの日🐥」\n";
 today.textContent="本日: " + y + "年" + m + "月" + d + "日 " + day + "曜日\n";
 
 if(d==14 || d==15){
