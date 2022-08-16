@@ -8,15 +8,33 @@
     <title>簡単家計簿</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <link rel="icon" href="favicon2.ico">
+    <link rel="stylesheet" href="chart.css">
 </head>
 
 <body>
-    <h1 class="text-center">簡単家計簿</h1>
-    <div style="position:relative;width:900px;height:500px;"><canvas id="stage"></canvas></div>
+    <header>
+        <h1><br><br></h1>
+        <h1 class="flex justify-center text-center font-black text-5xl leading-10 bg-white bg-opacity-50">簡単家計簿</h1>
+    </header>
+    <main>
+    <form class="">
+        <div>
+            <br>
+            <div class="border-dotted border-4 border-gray-500 bg-gray-100">
+                <p class="text-center">全額のところに今月の給与や貯金額を入力し、残金やどのくらいの割合で支出が発生しているのかをグラフで可視化してわかりやすくするアプリです。<br>
+                支出金額の内容を入力することにより、何にどれくらいの割合で消費しているかを把握することができます。<br>
+                支出金額の欄に半角数字以外のものを入力すると、正しく出力されないのでご注意ください。</p>
+            </div>
+            <br>
+        </div>
+    <div style="position:relative;width:900px;height:500px;">
+        <canvas id="stage"></canvas>
+    </div>
     <script type="text/javascript" src="chart_test.js"></script>
     <span class="font-black" id="result"></span>
     <div id="data1">
-        <label>全額（貯金額や今月の給料などを設定）:<input type="number" class="py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" name="data_time" id="full_amount" value="10000">円</label>
+        <label>全額（貯金額や今月の給料などを設定）:<input type="number" min="0" class="py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" name="data_time" id="full_amount" value="10000">円</label>
     </div>
     <p>支出</p>
     <button type="button" class="shadow-lg px-2 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition" id="add">項目の追加</button>
@@ -25,11 +43,18 @@
     <div id="data2">
         <div id="data2_c">
             <label>内容:<input type="text" class="py-2 border-b focus:outline-none focus:border-b-2 focus:border-green-500 placeholder-gray-500 placeholder-opacity-50" name="data_name" id="naiyou" value="交際費">
-                支出金額:<input type="number" class="py-2 border-b focus:outline-none focus:border-b-2 focus:border-red-500 placeholder-gray-500 placeholder-opacity-50" name="data_time" id="spending" value="0">円</label>
-            <input type="checkbox" class="checks" name="ckb" id="check"></div>
+                支出金額:<input type="number" min="0" class="py-2 border-b focus:outline-none focus:border-b-2 focus:border-red-500 placeholder-gray-500 placeholder-opacity-50" name="data_time" id="spending" value="0">円</label>
+            <input type="checkbox" class="checks" name="ckb" id="check">
+            <span class="text-red-600" id="ale"></span>
         </div>
     </div>
+    </form>
+    <br>
     <script type="text/javascript" src="chart_add.js"></script>
+    </main>
+    <footer class="bg-pink-100">
+		<p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p> 
+	</footer>
 </body>
 
 </html>
