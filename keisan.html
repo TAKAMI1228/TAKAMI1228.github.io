@@ -17,9 +17,26 @@
         <h1 class="flex justify-center text-center font-black text-5xl leading-10 bg-white bg-opacity-50">お菓子作りのための便利計算</h1>
     </header>
     <main class="bg-white bg-opacity-50">
-    <form class="flex justify-center bg-white bg-opacity-70">
+    <form class="flex justify-center bg-white bg-opacity-60">
         <div class="w-full lg:w-3/5">
             <br>
+            <div class="w-auto inline-block">
+                <p class="font-semibold">お菓子を作るときに必要な分量の計算を一つ一つ行わずに一気に計算できます。<br>既存のレシピを自分の手持ちの材料や型サイズに合ったものに変換可能です。
+                <br>これから色々な機能を追加していく予定でもあるので、ご期待ください。
+                </p>
+            </div>
+            <br>
+            <br>
+            <div class="border-2 border-yellow-500 bg-yellow-100 w-auto inline-block">
+                <h2>目次</h2>
+                <ol class="list-decimal list-inside">
+                    <li class="hover:underline"><a href="#kata">型サイズに合わせた計算</a></li>
+                    <li class="hover:underline"><a href="#bunryo">手元にある分量とレシピの分量の割合で計算</a></li>
+                </ol>
+            </div>
+            <br>
+            <br>
+            <h1 class="text-center text-xl font-black text-pink-600" id="kata">型サイズに合わせた計算</h1>
             <div class="border-dotted border-4 border-pink-500 bg-pink-100">
                 <p class="text-center"><strong class="underline text-2xl text-purple-500">「レシピの半分の量で作りたい。」「15cmの型のレシピだけど、18cmの型で作りたい。」</strong><br>お菓子作りをしていると、このような問題に直面することがあります。<br>
                 そこで開発したのがこの計算アプリです。レシピに記載されているサイズの分量から、手持ちの型の分量に変換できます。<br><strong class="text-red-500">※あくまでも目安です</strong></p>
@@ -48,7 +65,8 @@
         <br>
         <h2 class="font-black">材料</h2>
         <p>※牛乳、生クリーム等のml表記のものに関しましても、1ml=約1gと記載されているサイトが多くあるため、
-        グラム表記のものと同じ割合で計算してあります。あくまでも参考としての計算ツールですので、ご了承ください。
+        グラム表記のものと同じ割合で計算してあります。あくまでも参考としての計算ツールですので、ご了承ください。<br>
+        卵など、個数表記のものに関しましても、中途半端な数字になってしまいますが、個数で入力してください。
         </p>
         <div class="">
             <button type="button" class="shadow-lg px-2 py-1 w-40 bg-red-400 text-lg text-white font-semibold rounded  hover:bg-red-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="cal_Button()">計算</button>
@@ -198,7 +216,172 @@
         </table>
         <br>
         </div>
-        <div class="flex justify-end">
+
+        <!--分量の基準を決めて計算させる-->
+        <div id="bun">
+            <h1 class="text-center text-xl font-black text-blue-700" id="bunryo">手元にある分量とレシピの分量の割合で計算</h1>
+            <div class="border-dotted border-4 border-blue-500 bg-blue-100">
+                <p class="text-center"><strong class="underline text-2xl text-purple-500">Coming soon!!</strong></p>
+            </div>
+            <br>
+            <div>
+                <h2 class="font-black">基準とする材料の名前と分量</h2>
+                <div class="border-dotted border-2 border-x-2 border-blue-500 w-64 bg-blue-100">
+                    <label>基準とする材料:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="text" id="ki_name"><br></label>
+                    <br><br>
+                    <label>手持ちの分量:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="number" id="my_ryo"><br></label>
+                    <label>レシピの分量:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="number" id="res_ryo"></label>
+                </div>
+            </div>
+            <br>
+            <div class="">
+                <button type="button" class="shadow-lg px-2 py-1 w-40 bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="">計算</button>
+                <br>
+            <table class="border-separate border-2 border-blue-100 bg-white" id="table">
+                <thead>
+                <tr>
+                    <th class="border px-4 py-2 bg-blue-200">材料名</th>
+                    <th class="border px-4 py-2 bg-blue-200">分量(g,ml,大さじ,小さじなど...)</th>
+                    <th class="border px-4 py-2 bg-blue-200">今ある材料に合わせた分量</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun1">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result1"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun2">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result2"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun3">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result3"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun4">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result4"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun5">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result5"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun6">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result6"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun7">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result7"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun8">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result8"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun9">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result9"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun10">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result10"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g11">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result11"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g12">
+                    </td>
+                    <td class="border px-4 py-2">
+                        <span id="result12"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            </div>
         </div>
         </div>
         <script type="text/javascript" src="keisan.js"></script>
