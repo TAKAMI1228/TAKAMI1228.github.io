@@ -70,5 +70,10 @@ function box_data() {
 
     });
 
-    result_m.textContent = "残額は"+String(f_amonum)+"円";
+    if(f_amonum>0){
+        result_m.textContent = "残額は"+String(f_amonum)+"円";
+    }
+    else if(f_amonum<=0){
+        result_m.textContent = "残額は"+String(f_amonum)+"円、借金には気を付けましょう。";
+    }
 }
