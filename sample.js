@@ -17,6 +17,7 @@ var today=document.getElementById("today");
 var tohiyo=document.getElementById("todayhiyoko");
 var nhiyo=document.getElementById("hiyoko_next");
 var chiyo=document.getElementById("hiyoko_count");
+var niwa=document.getElementById("niwa");
 
 dateT = ["日", "月", "火", "水", "木", "金", "土"];
 var day = dateT[dt.getDay()];//曜日
@@ -74,6 +75,9 @@ today.textContent="本日: " + y + "年" + m + "月" + d + "日 " + day + "曜�
 
 if(d==14 || d==15){
   tohiyo.textContent="今日はヒヨコの日！！\n";
+}
+if(d==28){
+  niwa.textContent="本日28日はニワトリの日！！🐓\n";
 }
 
 //次回のひよこの日
