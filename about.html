@@ -14,13 +14,17 @@
         <h1><br><br></h1>
         <h1 class="flex justify-center text-center font-black text-5xl bg-white bg-opacity-50">このサイトについて</h1>
     </header>
-    <main class="flex justify-center">
-        <div class="w-full lg:w-3/4">
+    <main class="bg-white bg-opacity-60">
+        <form class="flex justify-center bg-white bg-opacity-60">
+            <div class="w-full lg:w-3/4">
+            <br>
             <h1>このサイトの目的</h1>
-            <div class="border-double border-4 border-yellow-400">
+            <div class="border-double border-4 border-yellow-400 bg-yellow-100">
+                <br><br>
                 <p class="text-center">
-                    <strong class="italic text-2xl text-yellow-700">"みんなの役に立つような便利なアプリケーションを作りたい。"</strong>
+                    <strong class="italic text-3xl text-yellow-700">"みんなの役に立つような便利なアプリケーションを作りたい。"</strong>
                 </p>
+                <br><br>
                 <p>
                     そんな思いからこのサイトを開設し、自作のアプリケーションを公開しています。<br>
                     まだまだJavaScript,Html,CSSの知識、経験は浅いですが、日々勉強しながらどのような
@@ -29,28 +33,63 @@
             </div>
             <br>
             <h1>各項目について</h1>
-            <div class="border-double border-4 border-yellow-400">
-                <ul class="list-disc">
-                <li>お菓子作り便利計算
-                    <div></div>
+            <div class="border-double border-4 border-yellow-400 bg-yellow-100">
+                <ul class="list-disc list-inside">
+                <li><strong>お菓子作り便利計算</strong>
+                    <ul class="list-inside">
+                    <li class="indent-8">お菓子作りに使える便利な計算アプリ。現在は手持ちの型のサイズとレシピの型のサイズが異なる場合の計算のみ実装済み。</li>
+                    </ul>
                 </li>
-                <li>簡単家計簿</li>
-                <li>ひよこ</li>
+                <li><strong>簡単収支早見グラフ</strong>
+                    <ul class="list-inside">
+                        <li class="indent-8">今月の給料や貯金額から、支出金額を入力してどれくらいの残額や支出があるかをグラフで可視化できます。現在はグラフ表示のみ。</li>
+                    </ul>
+                </li>
+                <li><strong>ひよこ</strong>
+                    <ul>
+                        <li class="indent-8"><strike>癒しをお届けするページ。</strike>ヒヨコに関する様々な情報を発信する予定です。</li>
+                    </ul>
+                </li>
                 </ul>
             </div>
             <br>
-            <h1>これから作りたいもの</h1>
+            <h1>これから作りたいもの（既存アプリに追加したい機能）</h1>
             <!--太さ、形、相性のいい味などでパスタを分ける-->
-            <div class="border-double border-4 border-yellow-400">
-                <ul class="list-disc">
-                <li>型ではなく、手元にある一つの材料の分量とレシピにあるその材料の分量の割合を計算し、手元の分量だとほかの材料はどれくらい必要か算出させる。</li>
-                <li>農作物の生育や収穫の目安となる、毎日の平均気温を足し合わせた"積算温度"を計算、管理できるアプリ。</li>
-                <li>健康管理アプリ</li>
-                <li>掲示板（GitHubだと実装不可なので他で）</li>
-                <li>既存のアプリケーションにも追加したい機能があり。</li>
+            <div class="border-double border-4 border-yellow-400 bg-yellow-100">
+                <ul class="list-disc list-inside">
+                <li><strong>"お菓子作り計算"で追加したい項目</strong>
+                    <ul class="list-disc list-inside">
+                        <li class="indent-8">型ではなく、手元にある一つの材料の分量とレシピにあるその材料の分量の割合を計算し、手元の分量だとほかの材料はどれくらい必要か算出させる。</li>
+                    </ul>
+                </li>
+                <li><strong>"収支早見グラフ"で追加したい項目</strong>
+                    <ul class="list-disc list-inside">
+                        <li class="indent-8">収支グラフの内容を住居費、水道光熱費の中の〇〇費のように、内容のジャンル分けを更に細分化し、それ毎にグラフの色分けをしたり、ジャンルごとにまとめた表（テーブル）を表示させる。</li>
+                        <li class="indent-8">見積を出せるようにしたい。（方法も確定していないので考え中）</li>
+                    </ul>
+                </li>
+                <li><strong>これから作りたいもの</strong>
+                    <ul class="list-disc list-inside">
+                        <li class="indent-8">農作物の生育や収穫の目安となる、毎日の平均気温を足し合わせた"積算温度"を計算、管理できるアプリ。</li>
+                        <li class="indent-8">健康管理アプリ</li>
+                        <li class="indent-8">掲示板（GitHubだと実装不可なので他で）</li>
+                    </ul>
+                </li>
                 </ul>
             </div>
+            <br>
+            <h1>管理人(TAKAMI1228)について</h1>
+            <div class="border-double border-4 border-yellow-400 bg-yellow-100">
+                <p>ヒヨコ、ニワトリ（とにかく鳥）をこよなく愛する管理人です。</p>
+                <ul class="list-disc list-inside">
+                    <li>趣味:プログラミング(競技プログラミング、Webサイト、アプリ制作)、カラオケ、お菓子作り、ゲーム、家庭菜園等・・・</li>
+                    <li>好きな食べ物:チョコレート、生春巻き、チーズ等・・・</li>
+                    <li>好きな教科:数学</li>
+                </ul>
+            </div>
+            <br>
         </div>
+        </form>
     </main>
     <footer class="bg-pink-100">
         <p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p> 
