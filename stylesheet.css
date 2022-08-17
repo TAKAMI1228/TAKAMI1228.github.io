@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap');
+
+header{
+  font-family: 'Kiwi Maru', serif;
+}
+
+.bg-green-300{
+  background: url(midori.jpg) center / cover;
+}
+
+h1{
+  font-family: 'Kiwi Maru', serif;
+}
 
 h2 {
   font-family: 'Sacramento', cursive;
 }
 
-
-
-
+#hiyod{
+  font-family: 'Kiwi Maru', serif;
+}
 
 .main {
   padding-top: 50px;
