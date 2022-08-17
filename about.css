@@ -9,3 +9,8 @@ header {
 h1{
     font-family: 'Yusei Magic', sans-serif;
 }
+
+main{
+    background: url(niwatorisan.jpg) center / cover;
+    position: relative;
+}
