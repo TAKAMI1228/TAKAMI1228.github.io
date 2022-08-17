@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>ひよこと便利な計算ができるサイト</title>
+	<title>便利な計算ができるサイト</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<link rel="stylesheet" href="stylesheet.css">
@@ -11,35 +11,47 @@
 </head>
 
 <body>
-	<header class="text-center container mx-auto flex justify-between bg-blue-300">
-		<h1 class="text-center text-4xl font-black">ひよこはかわいい<br></h1>
+	<header class="text-center container mx-auto flex justify-between h-16 bg-gradient-to-r from-teal-400 to-blue-500">
+		<h1 class="text-center text-4xl font-black">TAKAMI1228 App<br></h1>
 	</header>
 	<header class="container mx-auto flex justify-between bg-blue-300">
 		<nav id="snav">
 			<ul class="flex">
 				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="about.html">このサイトについて</a></li>
 				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="keisan.html">お菓子作り便利計算</a></li>
-				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="chart_test.html">簡単家計簿</a></li>
+				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="chart_test.html">簡単収支早見グラフ</a></li>
 				<li class="border-b p-4 m-3 hover:font-bold hover:border-red-500 duration-1000 focus:outline-none focus:border-b-2"><a href="#">ひよこ</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
 		<div class="bg-green-300">
-			<marquee scrollamount=10><img class="" src="piyoko.gif"><span id="hiyod">毎月14日、15日は「ひよこの日🐥」</span><img class="" src="piyoko.gif"></marquee>
+			<div class="bg-white bg-opacity-70">
+				<marquee scrollamount=10><img src="piyoko.gif"><span class="text-center text-4xl" id="hiyod">毎月14日、15日は「ひよこの日🐥」</span><img class="" src="piyoko.gif"></marquee>
+			</div>
 		</div>
-	<div class="main">
-		<div>
+	<div class="flex justify-center w-full lg:w-full">
+		<div class="w-auto p-3 bg-yellow-400 text-center">
 			<p id="today"></p>
 			<p class="font-black text-red-600" id="todayhiyoko"></p>
 			<p id="hiyoko_next"></p>
 			<p id="hiyoko_count"></p>
+			<p id="niwa"></p>
 		</div>
-		<h1>毎日ひよこ</h1>
-		<h2>～Everyday Chick～</h2>
-		<p>ちなみにこの下はかわいい子たち</p>
-		<img src="Piyo.jpg">
 	</div>
+	<div class="flex justify-center">
+			<div class="w-1/2 p-2 bg-yellow-500 text-center">
+				<div class="text-4xl inline-block align-middle">
+					<br><br><br>
+					<h1>毎日ひよこ</h1>
+					<br>
+					<h2>～Everyday Chick～</h2>
+				</div>
+			</div>
+			<div class="w-1/2 p-2 text-center bg-yellow-500">
+				<img class="shadow-lg text-center" id="hiyoimg" src="Piyo.jpg">
+			</div>
+		</div>
 	<script type="text/javascript" src="sample.js"></script>
 	</main>
 	<footer class="bg-pink-100">
