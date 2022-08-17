@@ -6,7 +6,7 @@
 料理の豆知識（Tips）（アクセスするたびにランダムで表示させる）
 */
 
-
+//型計算
 function cal_Button() {
     var res_kata = document.getElementById("res_size");
     var my_kata = document.getElementById("my_size");
