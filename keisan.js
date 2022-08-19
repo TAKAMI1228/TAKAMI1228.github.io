@@ -10,7 +10,6 @@
 function cal_Button() {
     var res_kata = document.getElementById("res_size");
     var my_kata = document.getElementById("my_size");
-    console.log(res_kata.value);
 
     if(res_kata.value=="" || my_kata.value==""){
         alert("型のサイズが未入力です。");
@@ -47,5 +46,27 @@ function cal_Button() {
             mate_Result(shimaru);
         }
 
+    }
+}
+
+//分量割合で計算
+function bun_Button(){
+    var my= document.getElementById("my_ryo");//手持ちの分量
+    var res= document.getElementById("res_ryo");//レシピの分量
+    var my_res=my.value/res.value
+
+    console.log(my.value);
+
+    if(my.value==""){
+        alert("使いたい分量が未入力です。");
+    }
+    else if(res.value==""){
+        alert("レシピの分量が未入力です。");
+    }
+
+    for(var i=1; i<13; i++){
+        var bun_g=document.getElementById("bun"+String(i));
+        var result = document.getElementById("b_result" + String(i));
+        result.textContent=bun_g.value*my_res;
     }
 }
