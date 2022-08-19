@@ -75,7 +75,7 @@
             <thead>
             <tr>
                 <th class="border px-4 py-2 bg-pink-200">材料名</th>
-                <th class="border px-4 py-2 bg-pink-200">分量(g,ml,大さじ,小さじなど...)</th>
+                <th class="border px-4 py-2 bg-pink-200">分量(g,ml,大さじ,小さじ,個数など...)</th>
                 <th class="border px-4 py-2 bg-pink-200">使いたい型で使用する分量</th>
             </tr>
             </thead>
@@ -219,30 +219,30 @@
 
         <!--分量の基準を決めて計算させる-->
         <div id="bun">
-            <h1 class="text-center text-xl font-black text-blue-700" id="bunryo">手元にある分量とレシピの分量の割合で計算</h1>
+            <h1 class="text-center text-xl font-black text-blue-700" id="bunryo">使いたい分量とレシピの分量の割合で計算</h1>
             <div class="border-dotted border-4 border-blue-500 bg-blue-100">
-                <p class="text-center"><strong class="underline text-2xl text-purple-500">Coming soon!!</strong></p>
+                <p class="text-center">手元にある材料を使い切りたいときや量が半端な時、〇〇gだけ使いたいという時にその分量に合わせて作りたいときってあると思います。<br>その計算をこのアプリ一つで完結！お菓子作りだけではなく料理にも使えます。<br>
+                <br>例:小麦粉を使い切りたいけど手元には300gあって、レシピを見ると400g必要。レシピの分量を小麦粉300g分を基準に合わせたい。<br><strong class="text-red-500">※これもあくまでも目安です</strong></p>
             </div>
             <br>
-            <div>
-                <h2 class="font-black">基準とする材料の名前と分量</h2>
-                <div class="border-dotted border-2 border-x-2 border-blue-500 w-64 bg-blue-100">
-                    <label>基準とする材料:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="text" id="ki_name"><br></label>
-                    <br><br>
-                    <label>手持ちの分量:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="number" id="my_ryo"><br></label>
-                    <label>レシピの分量:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="number" id="res_ryo"></label>
-                </div>
+            <h2 class="font-black">基準とする材料の名前と分量</h2>
+            <div class="border-dotted border-2 border-x-2 border-blue-500 w-64 bg-blue-100">
+                <label>基準とする材料:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="text" id="ki_name"><br></label>
+                <br><br>
+                <label>使いたいの分量:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="number" id="my_ryo"><br></label>
+                <label>レシピの分量:<input class="focus:bg-green-200 focus:outline-none hover:bg-green-100" type="number" id="res_ryo"></label>
             </div>
             <br>
             <div class="">
-                <button type="button" class="shadow-lg px-2 py-1 w-40 bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="">計算</button>
+                <span></span>
+                <button type="button" class="shadow-lg px-2 py-1 w-40 bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="bun_Button()">計算</button>
                 <br>
             <table class="border-separate border-2 border-blue-100 bg-white" id="table">
                 <thead>
                 <tr>
                     <th class="border px-4 py-2 bg-blue-200">材料名</th>
-                    <th class="border px-4 py-2 bg-blue-200">分量(g,ml,大さじ,小さじなど...)</th>
-                    <th class="border px-4 py-2 bg-blue-200">今ある材料に合わせた分量</th>
+                    <th class="border px-4 py-2 bg-blue-200">分量(g,ml,大さじ,小さじ,個数など...)</th>
+                    <th class="border px-4 py-2 bg-blue-200">基準とする材料に合わせた分量</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -254,7 +254,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun1">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result1"></span>
+                        <span id="b_result1"></span>
                     </td>
                 </tr>
                 <tr>
@@ -265,7 +265,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun2">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result2"></span>
+                        <span id="b_result2"></span>
                     </td>
                 </tr>
                 <tr>
@@ -276,7 +276,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun3">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result3"></span>
+                        <span id="b_result3"></span>
                     </td>
                 </tr>
                 <tr>
@@ -287,7 +287,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun4">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result4"></span>
+                        <span id="b_result4"></span>
                     </td>
                 </tr>
                 <tr>
@@ -298,7 +298,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun5">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result5"></span>
+                        <span id="b_result5"></span>
                     </td>
                 </tr>
                 <tr>
@@ -309,7 +309,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun6">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result6"></span>
+                        <span id="b_result6"></span>
                     </td>
                 </tr>
                 <tr>
@@ -320,7 +320,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun7">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result7"></span>
+                        <span id="b_result7"></span>
                     </td>
                 </tr>
                 <tr>
@@ -331,7 +331,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun8">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result8"></span>
+                        <span id="b_result8"></span>
                     </td>
                 </tr>
                 <tr>
@@ -342,7 +342,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun9">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result9"></span>
+                        <span id="b_result9"></span>
                     </td>
                 </tr>
                 <tr>
@@ -353,7 +353,7 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun10">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result10"></span>
+                        <span id="b_result10"></span>
                     </td>
                 </tr>
                 <tr>
@@ -361,10 +361,10 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                     </td>
                     <td class="border px-4 py-2">
-                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g11">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun11">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result11"></span>
+                        <span id="b_result11"></span>
                     </td>
                 </tr>
                 <tr>
@@ -372,10 +372,10 @@
                         <input class="focus:outline-none hover:border-double hover:border-2 hover:border-green-400" type="text" name="mate_n">
                     </td>
                     <td class="border px-4 py-2">
-                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="zai_g12">
+                        <input class="focus:outline-none hover:border-double hover:border-2 hover:border-purple-400" type="number" name="mate" id="bun12">
                     </td>
                     <td class="border px-4 py-2">
-                        <span id="result12"></span>
+                        <span id="b_result12"></span>
                     </td>
                 </tr>
                 </tbody>
