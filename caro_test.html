@@ -52,7 +52,13 @@
           <div class="card-body">
             <h5 class="card-title">ひよこについて</h5>
             <p class="card-text">ひよこって・・・一体何者なの？</p>
-            <a href="#" class="btn btn-primary">何も起きません</a>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Click!</a>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                ひよことは、一般的にはニワトリの雛のことを言います。しかし、他のひな鳥の呼称としても扱われることがあります。<br>
+                また、経験が浅かったり、少なかったりする人に向けても使われることがあります。
+              </div>
+            </div>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -73,6 +79,9 @@
         </div>
       </div>
   </main>
+  <footer class="bg-pink-100">
+		<p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p> 
+	</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
