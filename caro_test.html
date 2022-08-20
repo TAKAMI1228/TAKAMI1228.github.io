@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap勉強中</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="caro_sty.css">
+</head>
+<body>
+  <header>
+    <h1><br><br></h1>
+    <h1 class="flex justify-center text-center font-black text-5xl leading-10 bg-white bg-opacity-50">ひよこ</h1>
+  </header>
+  <main>
+    <div id="carouselExampleControls" class="carousel slide justify-content-center bg-info" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="#"><img src="hiyone.jpg" class="d-block w-50 mx-auto rounded" alt="寝ているヒヨコ"></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>眠るヒヨコたち</h5>
+              <p>気持ちよさそうに眠っている</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="long_piyo.jpg" class="d-block w-50 mx-auto rounded" alt="躍動感あるヒヨコ">
+          </div>
+          <div class="carousel-item">
+            <img src="Piyo.jpg" class="d-block w-50 mx-auto rounded" alt="手乗りヒヨコ">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!--カード-->
+      <div class="card-group">
+        <div class="card" style="width: 18rem;">
+          <img src="hiyokoippai.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">ひよこについて</h5>
+            <p class="card-text">ひよこって・・・一体何者なの？</p>
+            <a href="#" class="btn btn-primary">何も起きません</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="hiyone.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">このページについて</h5>
+            <p class="card-text">現時点ではbootstrapの練習用、勉強用として使用。</p>
+            <a href="#" class="btn btn-primary">何も起きません</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="long_piyo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">これから</h5>
+            <p class="card-text">ひよこについての情報を色々追加していきたいです。</p>
+            <a href="#" class="btn btn-primary">何も起きません</a>
+          </div>
+        </div>
+      </div>
+  </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
