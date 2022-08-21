@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
 header {
 	background: url(hiyokoippai.jpg) center / cover;
     position: relative;
 	height: 20vh;
+}
+h5{
+    font-family: 'Rampart One', cursive;
 }
