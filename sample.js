@@ -84,3 +84,9 @@ if(d==28){
 nhiyo.textContent=mess;
 //次回のひよこの日まであとxx日ってつけたいね
 chiyo.textContent="次回のひよこの日まであと"+count+"日"+"(14日の場合)と"+count2+"日"+"(15日の場合)";
+
+//鳴き声再生
+function audio() {
+  document.getElementById('btn_audio').currentTime = 0; //連続クリックに対応
+  document.getElementById('btn_audio').play(); //クリックしたら音を再生
+}
