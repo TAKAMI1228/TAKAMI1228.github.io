@@ -90,3 +90,20 @@ function audio() {
   document.getElementById('btn_audio').currentTime = 0; //連続クリックに対応
   document.getElementById('btn_audio').play(); //クリックしたら音を再生
 }
+
+//ひよこカウンター
+var piyo_click=document.getElementById("piyoko");
+var piyo_counter=document.getElementById("counter");
+let piyo_count=0;
+
+//カウンター10回達成後、日替わりで占い表示
+
+
+piyo_click.addEventListener("click",() => {
+  piyo_count++;
+  piyo_counter.innerHTML = "<br><br><h2>ん？こんなところにカウンターが・・・？</h2><br>カウンター:"+piyo_count;
+  if(piyo_count>=10){
+
+  }
+});
+
