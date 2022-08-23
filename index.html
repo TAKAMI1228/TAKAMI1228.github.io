@@ -13,13 +13,13 @@
 
 <body>
 	<header class="text-center container mx-auto flex justify-between h-16 bg-gradient-to-r from-teal-400 to-blue-500">
-		<h1 class="text-center text-4xl font-black">TAKAMI1228 App<br></h1>
+		<h1 class="text-center text-4xl font-black">毎日ひよこ ～Everyday Chick～</h1>
 	</header>
 	<main>
 		<div class="bg-green-300">
 			<div class="bg-white bg-opacity-75">
 				<marquee scrollamount=5>
-					<img class="btn" onclick="audio()" src="piyoko.gif">
+					<img class="btn" id="piyoko" onclick="audio()" src="piyoko.gif">
 					<img class="btn" onclick="audio()" src="piyoko.gif">
 					<img class="btn" onclick="audio()" src="piyoko.gif">
 					<img class="btn" onclick="audio()" src="piyoko.gif">
@@ -39,22 +39,13 @@
 		<audio id="btn_audio">
 			<source src="piyonaki.mp3" type="audio/mp3">
 		</audio>
-	<div class="flex justify-center w-full lg:w-full">
-		<div class="w-auto p-3 bg-yellow-400 text-center">
-			<p id="today"></p>
-			<p class="font-black text-red-600" id="todayhiyoko"></p>
-			<p id="hiyoko_next"></p>
-			<p id="hiyoko_count"></p>
-			<p id="niwa"></p>
-		</div>
-	</div>
 	<!--カード-->
 	<div class="card-group">
 		<div class="card bg-white text-white w-50">
 			<a href="about.html">
 				<img src="about.jpg" class="card-img" alt="...">
 				<div class="card-img-overlay hover:bg-white hover:bg-opacity-50">
-		  		<h4 class="card-title bg-dark bg-opacity-25 rounded-pill d-inline-flex">このサイトについて</h4>
+		  		<h3 class="card-title bg-dark d-inline-flex">このサイトについて</h3>
 				</div>
 			</a>
 	  </div>
@@ -62,7 +53,7 @@
 		<a href="keisan.html">
 			<img src="okashi.JPG" class="card-img" alt="...">
 			<div class="card-img-overlay hover:bg-white hover:bg-opacity-50">
-		  	<h4 class="card-title  bg-dark bg-opacity-25 rounded-pill d-inline-flex">お菓子作り便利計算</h4>
+		  	<h3 class="card-title  bg-dark d-inline-flex">お菓子作り便利計算</h3>
 			</div>
 		</a>
 	  </div>
@@ -70,7 +61,7 @@
 		<a href="chart_test.html">
 			<img src="dentaku.jpg" class="card-img" alt="...">
 			<div class="card-img-overlay hover:bg-white hover:bg-opacity-50">
-			<h4 class="card-title bg-dark bg-opacity-25 rounded-pill d-inline-flex">簡単収支早見グラフ</h4>
+			<h3 class="card-title bg-dark d-inline-flex">簡単収支早見グラフ</h3>
 			</div>
 		</a>
 	  </div>
@@ -78,10 +69,19 @@
 		<a href="caro_test.html">
 			<img src="Piyo.jpg" class="card-img" alt="...">
 			<div class="card-img-overlay hover:bg-white hover:bg-opacity-50">
-			<h4 class="card-title bg-dark bg-opacity-25 rounded-pill d-inline-flex">ひよこ</h4>
+			<h3 class="card-title bg-dark d-inline-flex">ひよこ</h3>
 			</div>
 		</a>
 	  </div>
+	</div>
+	<div class="flex justify-center w-full lg:w-full">
+		<div class="w-auto p-3 bg-yellow-400 text-center">
+			<h1 class="text-3xl" id="today"></h1>
+			<h1 class="font-black text-red-600" id="todayhiyoko"></h1>
+			<h1 id="hiyoko_next"></h1>
+			<h1 id="hiyoko_count"></h1>
+			<h1 id="niwa"></h1>
+		</div>
 	</div>
 	<div id="carouselExampleControls" class="carousel slide justify-content-center bg-info" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -123,11 +123,13 @@
       </div>
 	<div class="flex justify-center">
 			<div class="w-1/2 p-2 bg-yellow-500 text-center">
-				<div class="text-4xl inline-block align-middle">
+				<div class="inline-block align-middle">
 					<br><br><br>
-					<h1>毎日ひよこ</h1>
+					<h1 class="text-4xl">ひよこと計算だけじゃない</h1>
 					<br>
-					<h2>～Everyday Chick～</h2>
+					<h4>このサイトには隠し要素がいくつかあります。<br>毎日サイトを訪れたり、"ある場所"をクリックしたりするとわかるかも・・・？<br>("ある場所"のヒント:一番前)</h4>
+					<span id="counter"></span>
+					<span id="ten_count"></span>
 				</div>
 			</div>
 			<div class="w-1/2 p-2 text-center bg-yellow-500">
@@ -138,7 +140,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	</main>
 	<footer class="bg-pink-100">
-		<p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p> 
+		<p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p>
 	</footer>
 </body>
 </html>
