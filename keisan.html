@@ -20,18 +20,23 @@
     <form class="flex justify-center bg-white bg-opacity-60">
         <div class="w-full lg:w-3/5">
             <br>
-            <div class="w-auto inline-block">
-                <p class="font-semibold">お菓子を作るときに必要な分量の計算を一つ一つ行わずに一気に計算できます。<br>既存のレシピを自分の手持ちの材料や型サイズに合ったものに変換可能です。
-                <br>これから色々な機能を追加していく予定でもあるので、ご期待ください。
+            <div class="border-double border-8 border-yellow-500 bg-yellow-100 w-auto inline-block">
+                <h2 class="font-semibold">このページ全体の説明</h2>
+                <p>お菓子を作るときに必要な分量の計算などを一つ一つ行わずに一気に計算できます。既存のレシピを自分の手持ちの材料や型サイズに合ったものに変換可能です。
+                また、ワット数に応じた加熱時間の計算もすることができます。これから色々な機能を追加していく予定でもあるので、ご期待ください。<br><br>
+                <p class="">※牛乳、生クリーム等のml表記のものに関しましても、1ml=約1gと記載されているサイトが多くあるため、
+                グラム表記のものと同じ割合で計算してあります。あくまでも参考としての計算ツールですので、ご了承ください。<br>
+                卵など、個数表記のものに関しましても、中途半端な数字になってしまいますが、個数で入力してください。</p>
                 </p>
             </div>
             <br>
             <br>
             <div class="border-2 border-yellow-500 bg-yellow-100 w-auto inline-block">
-                <h2>目次</h2>
+                <h2 class="font-semibold">目次</h2>
                 <ol class="list-decimal list-inside">
                     <li class="hover:underline"><a href="#kata">型サイズに合わせた計算</a></li>
                     <li class="hover:underline"><a href="#bunryo">手元にある分量とレシピの分量の割合で計算</a></li>
+                    <li class="hover:underline"><a href="#watto">電子レンジでのワット数毎の加熱時間の計算</a></li>
                 </ol>
             </div>
             <br>
@@ -64,10 +69,6 @@
         </div>
         <br>
         <h2 class="font-black">材料</h2>
-        <p>※牛乳、生クリーム等のml表記のものに関しましても、1ml=約1gと記載されているサイトが多くあるため、
-        グラム表記のものと同じ割合で計算してあります。あくまでも参考としての計算ツールですので、ご了承ください。<br>
-        卵など、個数表記のものに関しましても、中途半端な数字になってしまいますが、個数で入力してください。
-        </p>
         <div class="">
             <button type="button" class="shadow-lg px-2 py-1 w-40 bg-red-400 text-lg text-white font-semibold rounded  hover:bg-red-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="cal_Button()">計算</button>
             <br>
@@ -383,12 +384,37 @@
             <br>
             </div>
         </div>
+        <!--ワット数-->
+        <div id="watto">
+            <h1 class="text-center text-xl font-black text-green-700" id="bunryo">電子レンジでのワット数毎の加熱時間の計算</h1>
+            <div class="border-dotted border-4 border-green-500 bg-green-100">
+                <p class="text-center">おうちの電子レンジにレシピなどで指定されたワット数がないときに使える計算です。このアプリもお菓子作りだけではなく料理やコンビニのお弁当を温めるときなどにも使えます。<br>（もはや両方使えるアプリのほうが増えているので、タイトルを変えたほうがいいのか・・・？）<br>
+                <br><strong class="text-red-500">※これも目安だと思ってください！</strong></p>
+            </div>
+            <br>
+            <h2 class="font-black">ワット数と加熱時間</h2>
+            <div class="border-dotted border-2 border-x-2 border-green-500 w-auto inline-block bg-green-100">
+                <label>レシピなどが指定するワット数:<br><input class="focus:bg-pink-200 focus:outline-none hover:bg-pink-100" type="number" id="sitei_w"><br></label>
+                <label>自分が使用したいワット数:<br><input class="focus:bg-pink-200 focus:outline-none hover:bg-pink-100" type="number" id="my_w"><br></label>
+                <br>
+                <label>時間の単位<br></label>
+                <label><input type="radio" name="time" id="sec" checked="checked">秒</label>
+                <label><input type="radio" name="time" id="min">分<br></label>
+                <label>レシピなどが指定する加熱時間:<input class="focus:bg-pink-200 focus:outline-none hover:bg-pink-100" type="number" id="res_time"></label>
+                <span class="text-red-500" id="W_result"></span>
+                <label><br>*秒の場合<br>例:180秒　入力「180」<br>*分の場合<br>例:2分30秒　入力「230」,　5分　入力「500」</label>
+            </div>
+            <br>
+            <button type="button" class="shadow-lg px-2 py-1 w-40 bg-green-400 text-lg text-white font-semibold rounded  hover:bg-green-500 hover:shadow-sm hover:translate-y-0.5 transform transition" onclick="wat_Button()">計算</button>
+            <br>
+        </div>
+        <br>
         </div>
         <script type="text/javascript" src="keisan.js"></script>
     </form>
     </main>
     <footer class="bg-pink-100">
-        <p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p> 
+        <p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p>
     </footer>
 </body>
 </html>
