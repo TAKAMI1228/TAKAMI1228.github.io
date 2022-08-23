@@ -70,3 +70,34 @@ function bun_Button(){
         result.textContent=bun_g.value*my_res;
     }
 }
+
+//ワットの計算
+var wat_Button=()=>{
+    var sitei_w=document.getElementById("sitei_w");//指定されたワット
+    var my_w=document.getElementById("my_w");//使用したいワット
+    var res_time=document.getElementById("res_time");//レシピで指定された時間
+    var result= document.getElementById("W_result");
+
+    if(sitei_w.value=="" || my_w.value==""){
+        alert("ワット数が未入力です。");
+    }
+
+    var wat_Cal = (t) => {
+        var wat_re=sitei_w.value*t/my_w.value;
+        var re_sec=wat_re%60;
+        var re_min=Math.floor(wat_re/60);
+        result.innerHTML="→"+my_w.value+"Wでの加熱時間は"+wat_re+"秒("+re_min+"分"+re_sec+"秒)です。";
+    };
+
+    //単位：秒
+    if(document.getElementById("sec").checked){
+        wat_Cal(res_time.value);
+    }
+
+    //単位：分
+    if(document.getElementById("min").checked){
+        var time_100=Math.floor(res_time.value/100);
+        wat_Cal((time_100*60)+(res_time.value-time_100*100));
+    }
+
+};
