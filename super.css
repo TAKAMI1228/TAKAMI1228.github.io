@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap');
+
+
+header {
+	background: url(super.jpg) center / cover;
+    position: relative;
+	height: 20vh;
+}
+
+
+h1{
+    font-family: 'BIZ UDPMincho', serif;
+}
