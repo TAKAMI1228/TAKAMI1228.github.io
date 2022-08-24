@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>お買い物に便利！</title>
+    <link rel="stylesheet" href="super.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1><br><br></h1>
+        <h1 class="flex justify-center text-center font-black text-5xl leading-10 bg-white bg-opacity-50">お買い物に便利な計算</h1>
+    </header>
+    <main class="">
+        <form class="flex justify-center">
+            <div class="w-full lg:w-3/4">
+                <br>
+                <div class="flex justify-center border-dashed border-4 border-violet-400 bg-violet-100 w-auto">
+                    <p class="">
+                        買い物で同じような商品があるときに、どれが一番安くてお得に買えるか悩むときってありますよね。一つ一つ計算するのも面倒・・・。<br>
+                        ここでそれぞれの商品のグラムや個数あたりの値段を比較してお得にお買い物しちゃいましょう！比較をしないで単純にグラムあたりの値段を知りたい時にも使えます。<br>
+                        「項目の追加」で比較する商品の項目の追加を行い、右端のチェックボックスと「項目の削除」で項目の削除を行うこともできます。
+                        最後に「計算」ボタンを押すと、1グラム当たりや1個当たりの値段を出力します。
+                    </p>
+                </div>
+                <br>
+                <h1 class="text-xl">商品比較<br></h1>
+                <div class="flex justify-center border-dashed border-2 border-violet-300 bg-violet-100 w-auto">
+                    <p>
+                        商品名、商品の量、価格をそれぞれ入力してください。量は単位を統一して入力してください。(例:100gと1kgを比較したい時→1kgを1000gとするか、100gを0.1kgとする。)<br>
+                        それぞれの1g(個、ml)あたりの価格も表示され、枠の下に最安値の商品名とその価格が表示されるようになっています。
+                    </p>
+                </div>
+                <br>
+                <button type="button" class="shadow-lg px-2 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition" id="add">項目の追加</button>
+                <button type="button" class="shadow-lg px-2 py-1  bg-red-400 text-lg text-white font-semibold rounded  hover:bg-red-500 hover:shadow-sm hover:translate-y-0.5 transform transition" id="remove" onclick="removeFunc()">項目の削除</button>
+                <button type="button" class="shadow-lg px-2 py-1  bg-yellow-400 text-lg text-white font-semibold rounded  hover:bg-yellow-500 hover:shadow-sm hover:translate-y-0.5 transform transition" id="keisan" onclick="kakaku_Hikaku()">計算</button>
+                <div class="flex justify-center border-dashed border-4 border-violet-400 bg-violet-100">
+                    <div class="grid gap-y-2" id="data2">
+                        <div id="data2_c">
+                            <label>商品名:<input type="text" class="rounded focus:bg-orange-100 focus:shadow-lg focus:outline-none" id="shohin" value="商品">
+                                　量（グラム、リットル、個数など）:<input type="number" min="0" class="rounded focus:bg-red-100 focus:shadow-lg focus:outline-none" id="ryo" value="0">
+                                　価格:<input type="number" min="0" class="rounded focus:shadow-lg focus:bg-yellow-100 focus:outline-none" id="kakaku" value="0">円
+                            </label>
+                            <input type="checkbox" class="checks" name="ckb" id="check">
+                            <br><span class="italic font-black"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="flex justify-center w-auto inline-block bg-violet-200">
+                    <span class="text-4xl font-black" id="result_min"></span>
+                </div>
+                <br>
+            </div>
+            <br>
+        </form>
+        <script type="text/javascript" src="chart_add.js"></script>
+        <script type="text/javascript" src="super.js"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </main>
+    <footer class="bg-pink-100">
+		<p class="lex justify-center text-center font-black text-1xl">&copy; TAKAMI1228. 2022.</p>
+	</footer>
+</body>
+</html>
